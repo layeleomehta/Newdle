@@ -1,0 +1,2 @@
+# Newdle
+Newdle = New-Wordle
