@@ -37,6 +37,8 @@ def make_valid_permutations(word):
 
     return list(combos)
 
+# generates random 5 letter word, finds all valid English permutations
+# returns a tuple of the random word, a list of valid combinations and number of combinations. 
 def main():
     output = []
     word = ""
@@ -47,10 +49,10 @@ def main():
         output = make_valid_permutations(word)
         num_valid_words = len(output)
     
-    print("Word:", word)
-    print("All combinations:", output)
-    print("Number of combinations:", num_valid_words)
     return (word, output, num_valid_words)
 
 if __name__ == "__main__":
-    main()
+    word, output, num_valid_words = main()
+    print("Word:", word)
+    print("All combinations:", output)
+    print("Number of combinations:", num_valid_words)
