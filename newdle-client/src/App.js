@@ -1,9 +1,14 @@
 import './App.css';
+import Loading from './Loading'
+import Game from './Game'
+
 
 function App() {
+
   return (
     <div className="App">
-      <p>Hey it's Laye!</p>
+      <Loading></Loading>
+      <Game></Game>
     </div>
   );
 }

@@ -61,7 +61,8 @@ def main():
     while(num_valid_words < 3 or num_valid_words > 6):
         word = generate_word()
         output = make_valid_permutations(word)
-        num_valid_words = len(output)
+        if(output):
+            num_valid_words = len(output)
     
     for i in range(0, len(output)):
         definitions.append(get_definition(output[i]))
@@ -70,20 +71,14 @@ def main():
 
 
 if __name__ == "__main__":
-    exampleList = []
+    word, output, definitions, num_valid_words = main()
+    time.sleep(3)
+
+    data = {}
+    data['word'] = word
+    data['combinations'] = output
+    data['definitions'] = definitions
+    data['numCombinations'] = num_valid_words
+    jsonObj = json.dumps(data)
     
-    for i in range(0, 5):
-        print("Start iteration number:", i)
-        word, output, definitions, num_valid_words = main()
-        data = {}
-        data['word'] = word
-        data['combinations'] = output
-        data['definitions'] = definitions
-        data['numCombinations'] = num_valid_words
-        jsonObj = json.dumps(data)
-        exampleList.append(jsonObj)
-        print("Done iteration number:", i)
-        time.sleep(3)
-
-
-    print(exampleList)
+    print(jsonObj)
